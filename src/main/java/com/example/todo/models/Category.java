@@ -5,21 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class Category {
     @Id
     @GeneratedValue
     private int id;
-    private String firstName;
-    private String password;
-    private String userName;
-    private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<Category> categories;
+    private String name;
+    private String description;
+
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private  User user;
 }
