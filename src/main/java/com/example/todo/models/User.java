@@ -20,6 +20,4 @@ public class User {
     private String userName;
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<Category> categories;
 }
