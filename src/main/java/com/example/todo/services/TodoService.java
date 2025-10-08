@@ -19,4 +19,24 @@ public class TodoService {
 
         return todoRepository.findAll();
     }
+
+    public void createTodo(String title) {
+
+        Todo todo=new Todo();
+        todo.setTitle(title);
+        todo.setCompleted(false); /// false by default and later we change to true for isCompleted
+        todoRepository.save(todo);
+
+    }
+
+    public void deleteTodo(Long id) {
+        todoRepository.deleteById(id);
+    }
+
+    public void toggleTodo(Long id) {
+        Todo todo=todoRepository.findById(id)
+                .orElseThrow(()->new IllegalArgumentException("Invalid Todo Id"));
+        todo.setCompleted(!todo.isCompleted());
+        todoRepository.save(todo);
+    }
 }
