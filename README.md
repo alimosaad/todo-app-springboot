@@ -13,6 +13,7 @@ This project is a **Simple Spring Boot** application for a Todo list.
 - **Spring Boot** (Controller)
 - **Spring Data JPA** (Database Access)
 - **MySQL** (Database)
+- **Lombok** (Reduce boilerplate Code)
 - **Thymeleaf** (Server Side)
 - **Bootstrap** (Styling)
 
